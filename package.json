@@ -1,0 +1,21 @@
+{
+  "name": "prototype-tts-vc-concat",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "elevenlabs": "^0.18.0",
+    "stream": "^0.0.3",
+    "ts-node": "^10.9.2"
+  }
+}
