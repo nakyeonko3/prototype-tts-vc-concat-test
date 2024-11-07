@@ -103,26 +103,3 @@ async function convertTextToSpeechByFetch() {
   }
 }
 // convertTextToSpeechByFetch();
-
-async function convertSpeechToSpeech() {
-  ffmpeg()
-    .input("./audio1_sst.mp3")
-    .input("anullsrc", {
-      f: "lavfi",
-      t: 1, // 1초 길이
-      r: 44100, // 샘플레이트
-      ac: 1, // 모노 채널
-    })
-    .input("./rico.mp3")
-    .complexFilter(["[0:a][1:a][2:a]concat=n=3:v=0:a=1[out]"])
-    .map("[out]")
-    .save(`${new Date().getTime()}_concat_output.mp3`)
-    .on("end", () => {
-      console.log("오디오 처리가 완료되었습니다.");
-    })
-    .on("error", (err) => {
-      console.error("에러 발생:", err);
-    });
-}
-
-convertSpeechToSpeech();
