@@ -33,23 +33,21 @@ public class App {
 
 
 
-            // Load API key from environment variable
-            // String apiKey = System.getenv("ELEVENLABS_API_KEY");
-            // // get api key
+        
             // ElevenLabsClient client = new ElevenLabsClient("api key");
 
-            // // Example: Upload voice
-            // // test12345라는 이름으로 audio1_sst.mp3, audio2_sst.mp3 파일을 업로드
-            // // 저거 test12345 라벨 매번 바꿔주기
-            // Map<String, Object> uploadResult = client.uploadVoice("test12345", client.getResourcePath("audio1_sst.mp3"), client.getResourcePath("audio2_sst.mp3"));
+            // // // Example: Upload voice
+            // // // test12345라는 이름으로 audio1_sst.mp3, audio2_sst.mp3 파일을 업로드
+            // // // 저거 test12345 라벨 매번 바꿔주기
+            // Map<String, Object> uploadResult = client.uploadVoice("1103", client.getResourcePath("audio1_sst.mp3"), client.getResourcePath("audio2_sst.mp3"));
             // System.out.println(uploadResult);
 
             // // Example: Convert speech to speech
 
             
-            // // 임시 voiceId
-            // // 위에서 받은 voiceId로 바꿔주기
-            // String voiceId =  "XHeqzSYOQhilhDgRsCHW"; //XHeqzSYOQhilhDgRsCHW, r
+            // // // 임시 voiceId
+            // // // 위에서 받은 voiceId로 바꿔주기
+            // String voiceId =  "cEolc9AAFm87UP45o8Oo";
             // String convertedFile = client.convertSpeechToSpeech(voiceId, client.getResourcePath("rico.mp3"));
             // System.out.println("Converted file: " + convertedFile);
 
@@ -65,22 +63,22 @@ public class App {
 
 
 
-            /*
-             * Example: Convert mp3 to wav
-             */
-            AudioConverter converter = new AudioConverter();
-            String inputPath = new App().getResourcePath("audio1_sst.mp3");
-            String outputPath = "audio1_sst" + "_output.wav";
-            converter.convertMp3ToWav(inputPath, outputPath);
+            // /*
+            //  * Example: Convert mp3 to wav
+            //  */
+            // AudioConverter converter = new AudioConverter();
+            // String inputPath = new App().getResourcePath("audio1_sst.mp3");
+            // String outputPath = "audio1_sst" + "_output.wav";
+            // converter.convertMp3ToWav(inputPath, outputPath);
 
 
-            /*
-             * Example: Convert wav to mp3
-             */
-            AudioConverter converter2 = new AudioConverter();
-            String inputPath2 = new App().getResourcePath("audio1_sst.wav");
-            String outputPath2 = "audio1_sst" + "_output.mp3";
-            converter2.convertWavToMp3(inputPath2, outputPath2);
+            // /*
+            //  * Example: Convert wav to mp3
+            //  */
+            // AudioConverter converter2 = new AudioConverter();
+            // String inputPath2 = new App().getResourcePath("audio1_sst.wav");
+            // String outputPath2 = "audio1_sst" + "_output.mp3";
+            // converter2.convertWavToMp3(inputPath2, outputPath2);
         } catch (Exception e) {
             e.printStackTrace();
         }

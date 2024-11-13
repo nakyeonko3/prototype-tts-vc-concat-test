@@ -37,6 +37,17 @@ public class ElevenLabsClient {
         this.objectMapper = new ObjectMapper();
     }
 
+// curl --request POST \
+//   --url https://api.elevenlabs.io/v1/voices/add \
+//   --header 'Content-Type: multipart/form-data' \
+//   --form 'name=<string>' \
+//   --form 'files=[
+//   null
+// ]' \
+//   --form remove_background_noise=true \
+//   --form 'description=<string>' \
+//   --form 'labels=<string>'
+
     public Map<String, Object> uploadVoice(String name, String... audioFilePaths) throws IOException {
         MultipartBody.Builder builder = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
@@ -55,6 +66,8 @@ public class ElevenLabsClient {
                 .addHeader("xi-api-key", apiKey)
                 .post(builder.build())
                 .build();
+    
+
 
         try (Response response = client.newCall(request).execute()) {
             if (!response.isSuccessful()) {
@@ -68,6 +81,11 @@ public class ElevenLabsClient {
             return result;
         }
     }
+
+
+//     curl --request POST \
+//   --url https://api.elevenlabs.io/v1/speech-to-speech/{voice_id} \
+//   --header 'Content-Type: multipart/form-data'
 
     public String convertSpeechToSpeech(String voiceId, String audioFilePath) throws IOException {
         // Create multipart request
