@@ -1,5 +1,9 @@
 # prototype-tts-vc-concat
 
+- 일레븐랩스 API 예제들
+- java와 node로 구현한 예제들
+- FFmpeg 를 이용한 오디오 합치기와 무음 추가 기능
+
 # 참고 자료
 ## elevenlabs 공식문서
 
